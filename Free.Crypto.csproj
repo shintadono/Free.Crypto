@@ -1,0 +1,112 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>8.0.30703</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{D6C945C6-488B-444E-AAC4-919ABBEEF92B}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Free.Crypto</RootNamespace>
+    <AssemblyName>Free.Crypto</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <TargetFrameworkProfile />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>TRACE;DEBUG;USE_NAMESPACE_DOC_CLASSES</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <DocumentationFile>bin\Debug\Free.Crypto.XML</DocumentationFile>
+    <GenerateSerializationAssemblies>Auto</GenerateSerializationAssemblies>
+    <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE;USE_NAMESPACE_DOC_CLASSES</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <DocumentationFile>bin\Release\Free.Crypto.XML</DocumentationFile>
+    <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup>
+    <SignAssembly>true</SignAssembly>
+  </PropertyGroup>
+  <PropertyGroup>
+    <AssemblyOriginatorKeyFile>StrongNameKey.snk</AssemblyOriginatorKeyFile>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Adler32.cs" />
+    <Compile Include="CheckDigits\ISIN.cs" />
+    <Compile Include="CheckDigits\Luhn.cs" />
+    <Compile Include="CheckDigits\NamespaceDoc.cs" />
+    <Compile Include="CRCChecksums\CRC.Implementations.UInt128.cs" />
+    <Compile Include="CRCChecksums\CRC.cs" />
+    <Compile Include="CRCChecksums\CRC.Implementations.UInt.cs" />
+    <Compile Include="CRCChecksums\CRC.Combine.cs" />
+    <Compile Include="CRCChecksums\CRC.Factories.cs" />
+    <Compile Include="CRCChecksums\CRC.GenerateTable.cs" />
+    <Compile Include="CRCChecksums\CRC.Implementations.Byte.cs" />
+    <Compile Include="CRCChecksums\CRC.Implementations.ULong.cs" />
+    <Compile Include="CRCChecksums\CRC.Implementations.UShort.cs" />
+    <Compile Include="CRCChecksums\CRC32.cs" />
+    <Compile Include="CRCChecksums\NamespaceDoc.cs" />
+    <Compile Include="CRCChecksums\RocksoftTMModelCRCAlgorithms\NamespaceDoc.cs" />
+    <Compile Include="CRCChecksums\CRCDescriptor.cs" />
+    <Compile Include="CheckDigits\Damm.cs" />
+    <Compile Include="FletcherChecksums\Fletcher16.cs" />
+    <Compile Include="FletcherChecksums\Fletcher16Checksum.cs" />
+    <Compile Include="FletcherChecksums\Fletcher32.cs" />
+    <Compile Include="FletcherChecksums\Fletcher32Checksum.cs" />
+    <Compile Include="FletcherChecksums\Fletcher64.cs" />
+    <Compile Include="FletcherChecksums\Fletcher64Checksum.cs" />
+    <Compile Include="FletcherChecksums\NamespaceDoc.cs" />
+    <Compile Include="GrayCodes.cs" />
+    <Compile Include="CRCChecksums\ICRC.cs" />
+    <Compile Include="NamespaceDoc.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="CRCChecksums\RocksoftTMModelCRCAlgorithms\DIRECT_TABLE.cs" />
+    <Compile Include="CRCChecksums\RocksoftTMModelCRCAlgorithms\REFLECTED.cs" />
+    <Compile Include="CRCChecksums\RocksoftTMModelCRCAlgorithms\RocksoftTMModelCRC.cs" />
+    <Compile Include="CRCChecksums\RocksoftTMModelCRCAlgorithms\SIMPLE.cs" />
+    <Compile Include="CRCChecksums\RocksoftTMModelCRCAlgorithms\TABLE.cs" />
+    <Compile Include="PseudoCRCChecksums\CRCK.cs" />
+    <Compile Include="PseudoCRCChecksums\NamespaceDoc.cs" />
+    <Compile Include="PseudoCRCChecksums\SICK.cs" />
+    <Compile Include="CheckDigits\Verhoeff.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="CRCChecksums\crc_v3.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Free.Core\Free.Core.csproj">
+      <Project>{887cc957-da20-463b-a49b-62327ea8585a}</Project>
+      <Name>Free.Core</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="LICENSE" />
+    <None Include="README.md" />
+    <None Include="StrongNameKey.snk" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>
